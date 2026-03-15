@@ -1,0 +1,59 @@
+2026-03-14 10:59:34 | Patient: 133 | Risk: Critical | Probability: 90.75%
+2026-03-14 11:00:04 | Patient: Screenshot 2026-03-13 at 11.14.31 AM | Risk: High Risk | Probability: 68.91%
+2026-03-14 11:00:12 | Patient: Screenshot 2026-03-14 at 10.46.20 AM | Risk: High Risk | Probability: 64.11%
+2026-03-14 11:00:18 | Patient: Screenshot 2026-03-14 at 10.46.20 AM | Risk: High Risk | Probability: 64.11%
+2026-03-14 11:00:30 | Patient: Screenshot 2026-03-14 at 10.46.20 AM | Risk: High Risk | Probability: 64.11%
+2026-03-14 12:11:17 | Patient: 154 | Risk: Critical | Probability: 82.6%
+2026-03-14 12:12:13 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-14 12:12:18 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-14 12:12:20 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-14 12:12:54 | Patient: 157 | Risk: Critical | Probability: 90.15%
+2026-03-14 12:13:14 | Patient: 002 | Risk: Moderate Risk | Probability: 39.97%
+2026-03-14 12:13:24 | Patient: 193 | Risk: Critical | Probability: 80.46%
+2026-03-14 12:15:19 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-14 12:15:21 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 10:35:36 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-15 10:46:54 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 13:49:45 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 13:50:31 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 13:52:46 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-15 14:38:06 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 14:38:21 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-15 14:52:41 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-15 14:53:57 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 14:54:02 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-15 15:00:26 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 15:00:31 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-15 15:13:21 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 17:53:23 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 17:54:10 | Patient: 144 | Risk: Critical | Probability: 94.81%
+2026-03-15 17:54:20 | Patient: 169 | Risk: Critical | Probability: 87.52%
+2026-03-15 17:54:25 | Patient: 149 | Risk: Critical | Probability: 87.81%
+2026-03-15 17:54:32 | Patient: 162 | Risk: High Risk | Probability: 67.62%
+2026-03-15 17:54:41 | Patient: 172 | Risk: Critical | Probability: 80.62%
+2026-03-15 17:54:48 | Patient: 199 | Risk: High Risk | Probability: 79.78%
+2026-03-15 17:54:57 | Patient: 024 | Risk: Low Risk | Probability: 5.31%
+2026-03-15 17:55:03 | Patient: 166 | Risk: Critical | Probability: 89.96%
+2026-03-15 17:55:10 | Patient: 165 | Risk: Critical | Probability: 91.56%
+2026-03-15 17:55:43 | Patient: 189 | Risk: Critical | Probability: 87.55%
+2026-03-15 17:55:48 | Patient: 180 | Risk: Critical | Probability: 92.18%
+2026-03-15 17:58:46 | Patient: 174 | Risk: Critical | Probability: 84.89%
+2026-03-15 17:58:51 | Patient: 179 | Risk: Critical | Probability: 84.53%
+2026-03-15 17:58:56 | Patient: 192 | Risk: Critical | Probability: 82.79%
+2026-03-15 17:59:01 | Patient: 184 | Risk: Critical | Probability: 90.52%
+2026-03-15 17:59:05 | Patient: 188 | Risk: Critical | Probability: 87.55%
+2026-03-15 17:59:10 | Patient: 190 | Risk: Critical | Probability: 86.5%
+2026-03-15 17:59:33 | Patient: 034 | Risk: Low Risk | Probability: 11.09%
+2026-03-15 17:59:40 | Patient: 177 | Risk: Critical | Probability: 80.93%
+2026-03-15 20:34:06 | Patient: 133 | Risk: Critical | Probability: 90.75%
+2026-03-15 20:34:15 | Patient: 080 | Risk: Moderate Risk | Probability: 57.7%
+2026-03-15 20:34:22 | Patient: 090 | Risk: Low Risk | Probability: 7.18%
+2026-03-15 20:35:00 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 20:35:05 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-15 20:52:18 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-15 20:57:21 | Patient: Screenshot 2026-03-14 at 12.11.47 PM | Risk: Critical | Probability: 86.16%
+2026-03-15 20:57:30 | Patient: Screenshot 2026-03-14 at 12.14.16 PM | Risk: High Risk | Probability: 78.01%
+2026-03-15 20:58:57 | Patient: 180 | Risk: Critical | Probability: 92.18%
+2026-03-15 20:59:03 | Patient: 179 | Risk: Critical | Probability: 84.53%
+2026-03-15 20:59:10 | Patient: 178 | Risk: Critical | Probability: 90.45%
+2026-03-15 20:59:18 | Patient: 013 | Risk: Low Risk | Probability: 25.03%

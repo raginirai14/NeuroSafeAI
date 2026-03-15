@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeuroSafeAI — Login</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Segoe UI',sans-serif;
+      background:#0a0e1a;
+      color:#fff;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .wrapper { width:100%; max-width:440px; padding:24px; }
+    .logo { text-align:center; margin-bottom:28px; }
+    .logo-icon { font-size:52px; }
+    .logo h1   { font-size:26px; color:#00d4ff; margin-top:10px; }
+    .logo p    { font-size:13px; color:#8899aa; margin-top:4px; }
+
+    .card {
+      background:#111827;
+      border-radius:20px;
+      padding:32px;
+      border:1px solid #1e2a3a;
+    }
+
+    /* Tabs */
+    .tabs {
+      display:flex;
+      background:#0d1520;
+      border-radius:10px;
+      padding:4px;
+      margin-bottom:24px;
+    }
+    .tab {
+      flex:1;
+      padding:10px;
+      text-align:center;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:14px;
+      color:#8899aa;
+      transition:all 0.2s;
+      border:none;
+      background:none;
+    }
+    .tab.active { background:#1e2a3a; color:#00d4ff; font-weight:bold; }
+
+    /* Forms */
+    .form { display:none; }
+    .form.active { display:block; }
+
+    .form h2 { font-size:18px; margin-bottom:4px; }
+    .form p   { font-size:13px; color:#8899aa; margin-bottom:20px; }
+
+    .input-group { margin-bottom:16px; }
+    .input-group label {
+      font-size:13px; color:#8899aa;
+      display:block; margin-bottom:6px;
+    }
+    .input-wrap { position:relative; }
+    .input-icon {
+      position:absolute; left:13px;
+      top:50%; transform:translateY(-50%);
+      font-size:15px;
+    }
+    .input-group input {
+      width:100%;
+      padding:12px 16px 12px 40px;
+      background:#0d1520;
+      border:1px solid #1e2a3a;
+      border-radius:10px;
+      color:#fff;
+      font-size:14px;
+      outline:none;
+      transition:border-color 0.2s;
+    }
+    .input-group input:focus { border-color:#00d4ff; }
+
+    .btn {
+      width:100%;
+      padding:13px;
+      background:linear-gradient(135deg,#00d4ff,#0099cc);
+      color:#000;
+      border:none;
+      border-radius:10px;
+      font-size:15px;
+      font-weight:bold;
+      cursor:pointer;
+      margin-top:4px;
+      transition:opacity 0.2s;
+    }
+    .btn:hover { opacity:0.85; }
+
+    .msg {
+      border-radius:8px;
+      padding:11px 14px;
+      font-size:13px;
+      margin-bottom:14px;
+      display:none;
+    }
+    .msg.show  { display:block; }
+    .msg.error { background:#2a0a0a; border:1px solid #ff4444; color:#ff4444; }
+    .msg.success { background:#0a2a0a; border:1px solid #44ff88; color:#44ff88; text-align:center; }
+
+    .divider { border:none; border-top:1px solid #1e2a3a; margin:20px 0; }
+
+    .users-list {
+      font-size:12px;
+      color:#445566;
+      max-height:120px;
+      overflow-y:auto;
+    }
+    .users-list p { margin-bottom:4px; }
+    .users-list b { color:#8899aa; }
+
+    .footer { text-align:center; margin-top:20px; font-size:12px; color:#445566; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="logo">
+    <div class="logo-icon">🧠</div>
+    <h1>NeuroSafeAI</h1>
+    <p>AI-Powered Brain Hemorrhage Detection</p>
+  </div>
+
+  <div class="card">
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('login')">Sign In</button>
+      <button class="tab"        onclick="switchTab('register')">Register</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="form active" id="form-login">
+      <h2>Welcome back 👋</h2>
+      <p>Sign in to your account</p>
+
+      <div class="msg error" id="login-error"></div>
+      <div class="msg success" id="login-success"></div>
+
+      <div class="input-group">
+        <label>Username</label>
+        <div class="input-wrap">
+          <span class="input-icon">👤</span>
+          <input type="text" id="login-username" placeholder="Enter username"/>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <div class="input-wrap">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="login-password" placeholder="Enter password"
+                 onkeydown="if(event.key==='Enter') login()"/>
+        </div>
+      </div>
+
+      <button class="btn" onclick="login()">Sign In →</button>
+
+      <hr class="divider"/>
+      <p style="font-size:12px;color:#445566;margin-bottom:8px;">Registered accounts:</p>
+      <div class="users-list" id="usersList"></div>
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div class="form" id="form-register">
+      <h2>Create account 🏥</h2>
+      <p>Register as a new user</p>
+
+      <div class="msg error"   id="reg-error"></div>
+      <div class="msg success" id="reg-success"></div>
+
+      <div class="input-group">
+        <label>Full Name</label>
+        <div class="input-wrap">
+          <span class="input-icon">🏷️</span>
+          <input type="text" id="reg-name" placeholder="e.g. Dr. John Smith"/>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Username</label>
+        <div class="input-wrap">
+          <span class="input-icon">👤</span>
+          <input type="text" id="reg-username" placeholder="Choose a username"/>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Role</label>
+        <div class="input-wrap">
+          <span class="input-icon">🩺</span>
+          <input type="text" id="reg-role" placeholder="e.g. Doctor, Radiologist, Admin"/>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <div class="input-wrap">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="reg-password" placeholder="Choose a password"/>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Confirm Password</label>
+        <div class="input-wrap">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="reg-confirm" placeholder="Repeat your password"
+                 onkeydown="if(event.key==='Enter') register()"/>
+        </div>
+      </div>
+
+      <button class="btn" onclick="register()">Create Account →</button>
+    </div>
+
+  </div>
+
+  <div class="footer">NeuroSafeAI v1.0 — For medical use only</div>
+</div>
+
+<script>
+  // ── Storage helpers ──────────────────────────────────────────
+  function getUsers() {
+    return JSON.parse(localStorage.getItem('neurosafe_users') || '{}');
+  }
+  function saveUsers(users) {
+    localStorage.setItem('neurosafe_users', JSON.stringify(users));
+  }
+
+  // ── Seed default accounts on first load ──────────────────────
+  if (!localStorage.getItem('neurosafe_users')) {
+    saveUsers({
+      "doctor"  : { password:"neuro123",  name:"Dr. Smith",  role:"Doctor" },
+      "admin"   : { password:"admin123",  name:"Admin User", role:"Admin" },
+      "ragini"  : { password:"ragini123", name:"Ragini Rai", role:"Developer" }
+    });
+  }
+
+  // ── Tab switching ─────────────────────────────────────────────
+  function switchTab(tab) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.form').forEach(f => f.classList.remove('active'));
+    document.getElementById('form-' + tab).classList.add('active');
+    event.target.classList.add('active');
+    clearMessages();
+    if (tab === 'login') renderUsersList();
+  }
+
+  function clearMessages() {
+    document.querySelectorAll('.msg').forEach(m => m.classList.remove('show'));
+  }
+
+  // ── Render registered users list ─────────────────────────────
+  function renderUsersList() {
+    const users = getUsers();
+    const list  = document.getElementById('usersList');
+    list.innerHTML = Object.entries(users).map(([u, d]) =>
+      `<p>👤 <b>${u}</b> — ${d.role}</p>`
+    ).join('');
+  }
+
+  // ── LOGIN ─────────────────────────────────────────────────────
+  function login() {
+    const username = document.getElementById('login-username').value.trim().toLowerCase();
+    const password = document.getElementById('login-password').value.trim();
+    const errBox   = document.getElementById('login-error');
+    const sucBox   = document.getElementById('login-success');
+
+    clearMessages();
+
+    if (!username || !password) {
+      errBox.textContent = '❌ Please fill in all fields';
+      errBox.classList.add('show');
+      return;
+    }
+
+    const users = getUsers();
+    if (users[username] && users[username].password === password) {
+      sessionStorage.setItem('loggedIn',  'true');
+      sessionStorage.setItem('username',  username);
+      sessionStorage.setItem('name',      users[username].name);
+      sessionStorage.setItem('role',      users[username].role);
+
+      sucBox.textContent = '✅ Login successful! Redirecting...';
+      sucBox.classList.add('show');
+
+      setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+    } else {
+      errBox.textContent = '❌ Invalid username or password';
+      errBox.classList.add('show');
+    }
+  }
+
+  // ── REGISTER ──────────────────────────────────────────────────
+  function register() {
+    const name     = document.getElementById('reg-name').value.trim();
+    const username = document.getElementById('reg-username').value.trim().toLowerCase();
+    const role     = document.getElementById('reg-role').value.trim();
+    const password = document.getElementById('reg-password').value.trim();
+    const confirm  = document.getElementById('reg-confirm').value.trim();
+    const errBox   = document.getElementById('reg-error');
+    const sucBox   = document.getElementById('reg-success');
+
+    clearMessages();
+
+    if (!name || !username || !role || !password || !confirm) {
+      errBox.textContent = '❌ Please fill in all fields';
+      errBox.classList.add('show');
+      return;
+    }
+    if (password !== confirm) {
+      errBox.textContent = '❌ Passwords do not match';
+      errBox.classList.add('show');
+      return;
+    }
+    if (password.length < 6) {
+      errBox.textContent = '❌ Password must be at least 6 characters';
+      errBox.classList.add('show');
+      return;
+    }
+
+    const users = getUsers();
+    if (users[username]) {
+      errBox.textContent = '❌ Username already exists';
+      errBox.classList.add('show');
+      return;
+    }
+
+    // Save new user
+    users[username] = { password, name, role };
+    saveUsers(users);
+
+    sucBox.textContent = '✅ Account created! Switching to login...';
+    sucBox.classList.add('show');
+
+    setTimeout(() => {
+      document.getElementById('reg-name').value     = '';
+      document.getElementById('reg-username').value = '';
+      document.getElementById('reg-role').value     = '';
+      document.getElementById('reg-password').value = '';
+      document.getElementById('reg-confirm').value  = '';
+      switchTab('login');
+      document.querySelectorAll('.tab')[0].classList.add('active');
+    }, 1500);
+  }
+
+  // Init
+  renderUsersList();
+</script>
+</body>
+</html>
