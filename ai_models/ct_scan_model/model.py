@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 from torchvision import models
-
 class HemorrhageDetector(nn.Module):
     def __init__(self, pretrained=True):
         super(HemorrhageDetector, self).__init__()

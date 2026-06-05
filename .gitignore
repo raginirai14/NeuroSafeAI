@@ -1,7 +1,6 @@
 venv/
 __pycache__/
 *.pyc
-*.pth
 temp_uploads/
 .DS_Store
 *.egg-info/
