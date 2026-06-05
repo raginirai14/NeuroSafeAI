@@ -1,0 +1,20 @@
+torch
+torchvision
+fastapi
+uvicorn
+pillow
+python-multipart
+scikit-learn
+numpy
+aiofiles
+EOFrm -rf ~/Downloads/Projects/NeuroSafeAI/requirements.txt
+cat > ~/Downloads/Projects/NeuroSafeAI/requirements.txt << 'EOF'
+torch
+torchvision
+fastapi
+uvicorn
+pillow
+python-multipart
+scikit-learn
+numpy
+aiofiles
