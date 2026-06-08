@@ -372,7 +372,7 @@
     formData.append('file', selectedFile);
 
     try {
-      const res  = await fetch('http://127.0.0.1:8080/predict', { method:'POST', body:formData });
+      const res  = await fetch('https://neurosafeai-1.onrender.com/predict', { method:'POST', body:formData });
       const data = await res.json();
       document.getElementById('loading').style.display = 'none';
       showResult(data);
