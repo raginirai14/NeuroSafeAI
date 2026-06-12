@@ -165,9 +165,7 @@
 
       <button class="btn" onclick="login()">Sign In →</button>
 
-      <hr class="divider"/>
-      <p style="font-size:12px;color:#445566;margin-bottom:8px;">Registered accounts:</p>
-      <div class="users-list" id="usersList"></div>
+      <!-- Demo accounts removed from public page -->
     </div>
 
     <!-- REGISTER FORM -->
@@ -236,14 +234,7 @@
     localStorage.setItem('neurosafe_users', JSON.stringify(users));
   }
 
-  // ── Seed default accounts on first load ──────────────────────
-  if (!localStorage.getItem('neurosafe_users')) {
-    saveUsers({
-      "doctor"  : { password:"neuro123",  name:"Dr. Smith",  role:"Doctor" },
-      "admin"   : { password:"admin123",  name:"Admin User", role:"Admin" },
-      "ragini"  : { password:"ragini123", name:"Ragini Rai", role:"Developer" }
-    });
-  }
+  // Demo accounts removed for public deployment — no seeded users
 
   // ── Tab switching ─────────────────────────────────────────────
   function switchTab(tab) {
@@ -261,8 +252,9 @@
 
   // ── Render registered users list ─────────────────────────────
   function renderUsersList() {
-    const users = getUsers();
     const list  = document.getElementById('usersList');
+    if (!list) return; // users list removed from public page
+    const users = getUsers();
     list.innerHTML = Object.entries(users).map(([u, d]) =>
       `<p>👤 <b>${u}</b> — ${d.role}</p>`
     ).join('');
